@@ -1,0 +1,152 @@
+body {
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+#container_main {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+#container_controls {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+#button_play_pause {
+    width: 25px;
+    height: 25px;
+}
+
+#button_stop {
+    width: 25px;
+    height: 25px;
+}
+
+#button_save {
+    height: 25px;
+}
+
+#button_load {
+    height: 25px;
+}
+
+.control_bottons {
+    border-radius: 50%;
+}
+
+#input_bpm {
+    width: 40px;
+}
+
+#container_tracks {
+    display: flex;
+    flex-direction: column;
+    background-color: #7F7F7F;
+    border-top: 1px solid #000000;
+    overflow: visible;
+}
+
+.track_drag_handle {
+    width: 20px;
+    border: 1px solid #000000;
+    background-color: #CCCCCC;
+    cursor: grab;
+    
+}
+
+.track {
+    border-bottom: 1px solid #606060;
+    display: flex;
+    flex-direction: row;
+}
+
+.container_track_controls {
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    border-right: 1px solid #000000;
+}
+
+.container_note_sequence {
+    width: 100%;
+    background-color: #7F7F7F;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+#button_add_track {
+    height: 20px;
+}
+
+.selction_instrument {
+    height: 20px;
+}
+
+.button_delete_track {
+    height: 20px;
+}
+
+.container_notes {
+    width: 100px;
+    height: 60px;
+    transform: scale(1);
+    padding: 1px;
+    background-color: #AFAFAF;
+    border: 1px solid #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 5px;
+    transition: width 0.1s ease, height 0.1s ease;
+    z-index: 300;
+}
+
+.conainer_notes_expanded {
+    width: 200px;
+    height: 120px;
+    z-index: 400;
+}
+
+.container_note_rows {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    pointer-events: none;
+}
+
+.note {
+    width: 100%;
+    background-color: #333333;
+    border-radius: 2px;
+    margin: 1px;
+    border: 1px solid #0000007F;
+    pointer-events: none;
+}
+
+.active_note {
+    background-color: #DDDD00;
+}
+
+.button_add_notes {
+    width: 104px;
+    height: 64px;
+    border: 1px solid #000000;
+}
+
+.dragging_track {
+    opacity: 0.0;
+}
+
+.dragging_note {
+    opacity: 0.0;
+}
