@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sequencer</title>
     <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js" integrity="sha512-xi/RZRIF/S0hJ+yJJYuZ5yk6/8pCiRlEXZzoguSMl+vk2i3m6UjUO/WcZ11blRL/O+rnj94JRGwt/CHbc9+6EA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <h1>sky sequencer</h1>
@@ -13,9 +14,10 @@
         <div id="container_controls">
             <button id="button_play_pause" class="control_buttons">>|</button>
             <button id="button_stop" class="control_buttons">[]</button>
-            <input id="input_bpm">bpm
+            <input id="input_bpm" value="120">bpm
             <button id="button_save" class="control_buttons">save json</button>
             <button id="button_load" class="control_buttons">load json</button>
+            volume:<input id="slider_volume" type="range" min="0" max="100" value="50">
         </div>
         <div id="container_tracks"></div>
         <button id="button_add_track">+</button>
@@ -23,6 +25,7 @@
 
     <script src="scripts/instruments.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/sequencer_play.js"></script>
 </body>
 </html>
 

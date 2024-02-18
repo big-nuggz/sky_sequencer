@@ -73,5 +73,28 @@ const instruments = {
     },
     "fortune drum": {
         "id": "fortune_drum"
+    }, 
+    "plong": {
+        "id": "pling plong"
     }
 }
+
+var plongs = [
+    new Howl({src: ['/audio/plong/C4.mp3']}), 
+    new Howl({src: ['/audio/plong/D5.mp3']}), 
+    new Howl({src: ['/audio/plong/E5.mp3']}), 
+    new Howl({src: ['/audio/plong/F5.mp3']}), 
+    new Howl({src: ['/audio/plong/G5.mp3']}), 
+
+    new Howl({src: ['/audio/plong/A5.mp3']}), 
+    new Howl({src: ['/audio/plong/B5.mp3']}), 
+    new Howl({src: ['/audio/plong/C5.mp3']}), 
+    new Howl({src: ['/audio/plong/D6.mp3']}), 
+    new Howl({src: ['/audio/plong/E6.mp3']}), 
+
+    new Howl({src: ['/audio/plong/F6.mp3']}), 
+    new Howl({src: ['/audio/plong/G6.mp3']}), 
+    new Howl({src: ['/audio/plong/A6.mp3']}), 
+    new Howl({src: ['/audio/plong/B6.mp3']}), 
+    new Howl({src: ['/audio/plong/C7.mp3']}),
+]
