@@ -7,7 +7,8 @@
     --color_grab_handle_border: #B2B2D9;
     --color_track_control_background: #B2B2D9;
     --color_track_control_border: #CDCDFA;
-    --color_note_container: #8E8EAB;
+    --color_note_container_background: #8E8EAB;
+    --color_note_container_active: #B2B2D9;
     --color_note_container_border: #363644;
     --color_note_inactive: #6C6C82;
     --color_note_active: #CDCDFA;
@@ -151,7 +152,7 @@ button {
     height: 60px;
     transform: scale(1);
     padding: 1px;
-    background-color: var(--color_note_container);
+    background-color: var(--color_note_container_background);
     border: 1px solid var(--color_note_container_border);
     border-radius: 2px;
     display: flex;
@@ -160,6 +161,10 @@ button {
     margin-right: 5px;
     transition: width 0.1s ease, height 0.1s ease;
     z-index: 300;
+}
+
+.notes_current {
+    background-color: var(--color_note_container_active);
 }
 
 .conainer_notes_expanded {

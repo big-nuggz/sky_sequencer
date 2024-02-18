@@ -39,6 +39,7 @@ function reset_sequence() {
     playing = false;
     clearInterval(global_timer);
     timers = null;
+    reset_playheads();
 }
 
 function start_timer() {
@@ -59,8 +60,17 @@ function timer_increment() {
             timers[index] ++;
         });
     }
-    
+
+    reset_playheads();
     play_html();
+}
+
+function reset_playheads() {
+    var blocks = track_list.querySelectorAll(".container_notes");
+    
+    blocks.forEach((block) => {
+        block.classList.remove("notes_current");
+    });
 }
 
 function initialize_timers() {
@@ -86,6 +96,8 @@ function play_html() {
         var playing_block = note_blocks[timers[track_index]];
         if (playing_block != undefined){
             let notes = playing_block.querySelectorAll('.note');
+
+            playing_block.classList.add("notes_current");
 
             notes.forEach((note, note_index) => {
                 if (note.classList.contains("active_note")) {
