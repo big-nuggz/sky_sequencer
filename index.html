@@ -4,55 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sequencer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js" integrity="sha512-xi/RZRIF/S0hJ+yJJYuZ5yk6/8pCiRlEXZzoguSMl+vk2i3m6UjUO/WcZ11blRL/O+rnj94JRGwt/CHbc9+6EA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    <h1>sky sequencer</h1>
+    <h1>SKY SEQUENCER</h1>
+    <span class="subtitle">in development</span>
     <div id="container_main">
-        these controls do nothing yet sry
         <div id="container_controls">
-            <button id="button_play_pause" class="control_buttons">>|</button>
-            <button id="button_stop" class="control_buttons">[]</button>
+            <button id="button_play_pause" class="control_buttons">play/pause</button>
+            <button id="button_stop" class="control_buttons">stop</button>
             <input id="input_bpm" value="120">bpm
-            <button id="button_save" class="control_buttons">save json</button>
-            <button id="button_load" class="control_buttons">load json</button>
+            <button id="button_save" class="control_buttons" disabled="true">save json</button>
+            <button id="button_load" class="control_buttons" disabled="true">load json</button>
             volume:<input id="slider_volume" type="range" min="0" max="100" value="50">
         </div>
         <div id="container_tracks"></div>
         <button id="button_add_track">+</button>
     </div>
 
+    <p>
+        Click on "+" to add new tracks. <br />
+        Add new notes by clicking "+" button on track, and delete them with right click. <br />
+        Rearrange tracks by clicking & dragging handle on far left. <br />
+        Notes can also be rearranged within tracks.
+    </p>
+
     <script src="scripts/instruments.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/sequencer_play.js"></script>
 </body>
 </html>
-
-<!-- <select class="selction_instrument">
-    <option value="piano">harp</option>
-    <option value="bass_harp">bass harp</option>
-    <option value="guitar">guitar</option>
-    <option value="ukulele">ukulele</option>
-    <option value="lute">lute</option>
-    <option value="elecrtric_guitar">elecrtric guitar</option>
-    <option value="piano">piano</option>
-    <option value="winter_piano">winter piano</option>
-    <option value="xylophone">xylophone</option>
-    <option value="kalimba">kalimba</option>
-    <option value="horn">horn</option>
-    <option value="flute">flute</option>
-    <option value="panflute">panflute</option>
-    <option value="bugle">bugle</option>
-    <option value="vessel_flute">vessel flute</option>
-    <option value="drum">drum</option>
-    <option value="small_bell">small bell</option>
-    <option value="large_bell">large bell</option>
-    <option value="handpan">handpan</option>
-    <option value="prophecy_drum">prophecy drum</option>
-    <option value="aurora">aurora</option>
-    <option value="ocarina">ocarina</option>
-    <option value="violin">violin</option>
-    <option value="saxophone">saxophone</option>
-    <option value="fortune_drum">fortune drum</option>
-</select> -->

@@ -31,11 +31,11 @@ function create_new_track() {
             });
 
         var instrument_selector = document.createElement("select");
-        instrument_selector.classList.add("selction_instrument");
+        instrument_selector.classList.add("selection_instrument");
 
         Object.keys(instruments).forEach((key) => {
             let instrument_option = document.createElement("option");
-            instrument_option.value = instruments[key].id;
+            instrument_option.value = key;
             instrument_option.innerText = key;
             instrument_selector.appendChild(instrument_option);
         });
@@ -88,15 +88,19 @@ function add_note_container(event) {
     var container = document.createElement("div");
     container.classList.add("container_notes");
     container.draggable = "true";
+
+    var note_index = 0;
     for (let row = 0; row < 3; row ++) {
         var container_row = document.createElement("div");
         container_row.classList.add("container_note_rows");
         for (let column = 0; column < 5; column ++) {
             var note = document.createElement("div");
             note.classList.add("note");
+            note.classList.add("index_" + note_index)
             note.addEventListener("click", toggle_note_state);
 
             container_row.appendChild(note);
+            note_index ++;
         }
         container.appendChild(container_row);
     }
@@ -122,7 +126,17 @@ function delete_note_container(event) {
 }
 
 function toggle_note_state(event) {
-    event.target.classList.toggle("active_note");
+    if (event.target.classList.contains("active_note")) {
+        event.target.classList.remove("active_note");
+    } else {
+        event.target.classList.add("active_note");
+        var note_index = parseInt(event.target.classList[1].split('_')[1])
+        var instrument = event.target.parentNode.parentNode.parentNode.parentNode.querySelectorAll(".selection_instrument")[0].value;
+        if (instruments[instrument].source != undefined) {
+            instruments[instrument].source[note_index].play();
+        }
+    }
+    
     event.stopPropagation();
 }
 

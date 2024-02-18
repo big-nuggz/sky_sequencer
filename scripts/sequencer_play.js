@@ -52,8 +52,6 @@ function pause_timer() {
 }
 
 function timer_increment() {
-    console.log("timer incrementing");
-
     if (timers == null) {
         initialize_timers();
     } else{
@@ -63,8 +61,6 @@ function timer_increment() {
     }
     
     play_html();
-
-    console.log(timers);
 }
 
 function initialize_timers() {
@@ -80,6 +76,8 @@ function play_html() {
     var tracks = track_list.querySelectorAll(".track");
 
     tracks.forEach((track, track_index) => {
+        var instrument = track.querySelectorAll(".selection_instrument")[0].value;
+
         var note_blocks = track.querySelectorAll(".container_notes");
         if (timers[track_index] >= note_blocks.length) {
             timers[track_index] = 0;
@@ -91,7 +89,7 @@ function play_html() {
 
             notes.forEach((note, note_index) => {
                 if (note.classList.contains("active_note")) {
-                    plongs[note_index].play();
+                    instruments[instrument].source[note_index].play();
                 }
             });
         }

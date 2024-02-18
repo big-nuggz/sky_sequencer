@@ -1,29 +1,78 @@
+:root {
+    --color_background: #31313E;
+    --color_header: #4E4E61;
+    --color_sequence_background: #4E4E61;
+    --color_sequence_border: #363644;
+    --color_grab_handle: #CDCDFA;
+    --color_grab_handle_border: #B2B2D9;
+    --color_track_control_background: #B2B2D9;
+    --color_track_control_border: #CDCDFA;
+    --color_note_container: #8E8EAB;
+    --color_note_container_border: #363644;
+    --color_note_inactive: #6C6C82;
+    --color_note_active: #CDCDFA;
+    --color_note_border: #6C6C82;
+    --color_note_add_background: #4E4E61;
+    --color_note_add_border: #6C6C82;
+    --color_note_add_text: #6C6C82;
+    --color_text: #CDCDFA;
+}
+
+* {
+    font-family: "Varela Round", sans-serif;
+}
+
 body {
     height: 100vh;
     margin: 0px;
-    padding: 0px;
     border: 0px;
+    background-color: var(--color_background);
+    color: var(--color_text);
+}
+
+h1 {
+    padding: 12px;
+    margin: 0px;
+    border: 0x;
+    background-color: var(--color_header);
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.subtitle {
+    margin: 0px;
+    color: red;
+    margin-bottom: 10px;
+    padding: 0px;
+    border: 0x;
+    display: block;
+}
+
+button {
+    border-radius: 2px;
 }
 
 #container_main {
     display: flex;
     flex-direction: column;
     width: auto;
+    padding: 6px;
 }
 
 #container_controls {
     display: flex;
     flex-direction: row;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    gap: 5px;
 }
 
 #button_play_pause {
-    width: 25px;
+    /* width: 25px; */
     height: 25px;
 }
 
 #button_stop {
-    width: 25px;
+    /* width: 25px; */
     height: 25px;
 }
 
@@ -46,21 +95,21 @@ body {
 #container_tracks {
     display: flex;
     flex-direction: column;
-    background-color: #7F7F7F;
-    border-top: 1px solid #000000;
+    background-color: var(--color_sequence_background);
+    border-top: 1px solid var(--color_sequence_border);
     overflow: visible;
 }
 
 .track_drag_handle {
     width: 20px;
-    border: 1px solid #000000;
-    background-color: #CCCCCC;
+    border: 1px solid var(--color_grab_handle_border);
+    background-color: var(--color_grab_handle);
     cursor: grab;
     
 }
 
 .track {
-    border-bottom: 1px solid #606060;
+    border-bottom: 5px solid var(--color_sequence_border);
     display: flex;
     flex-direction: row;
 }
@@ -70,24 +119,26 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #FFFFFF;
-    border-right: 1px solid #000000;
+    background-color: var(--color_track_control_background);
+    /* border-right: 1px solid var(--color_track_control_border); */
 }
 
 .container_note_sequence {
     width: 100%;
-    background-color: #7F7F7F;
+    /* background-color: #7F7F7F; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 4px;
+    padding: 4px;
 }
 
 #button_add_track {
-    height: 20px;
+    height: 24px;
+    font-size: 16px;
 }
 
-.selction_instrument {
+.selection_instrument {
     height: 20px;
 }
 
@@ -100,8 +151,9 @@ body {
     height: 60px;
     transform: scale(1);
     padding: 1px;
-    background-color: #AFAFAF;
-    border: 1px solid #000000;
+    background-color: var(--color_note_container);
+    border: 1px solid var(--color_note_container_border);
+    border-radius: 2px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -126,21 +178,27 @@ body {
 
 .note {
     width: 100%;
-    background-color: #333333;
+    background-color: var(--color_note_inactive);
     border-radius: 2px;
     margin: 1px;
-    border: 1px solid #0000007F;
+    /* border: 1px solid var(--color_note_border); */
     pointer-events: none;
 }
 
 .active_note {
-    background-color: #DDDD00;
+    background-color: var(--color_note_active);
 }
 
 .button_add_notes {
     width: 104px;
     height: 64px;
-    border: 1px solid #000000;
+    padding: 0px;
+    background-color: var(--color_note_add_background);
+    border: 1px solid var(--color_note_add_border);
+    border-radius: 2px;
+    color: var(--color_note_add_text);
+    font-size: 36px;
+    font-weight: 900;
 }
 
 .dragging_track {
