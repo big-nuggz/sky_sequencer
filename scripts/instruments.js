@@ -1,21 +1,21 @@
 var plongs = [
-    new Howl({src: ['../audio/plong/C4.mp3']}), 
-    new Howl({src: ['../audio/plong/D4.mp3']}), 
-    new Howl({src: ['../audio/plong/E4.mp3']}), 
-    new Howl({src: ['../audio/plong/F4.mp3']}), 
-    new Howl({src: ['../audio/plong/G4.mp3']}), 
+    new Howl({src: ['audio/plong/C4.mp3']}), 
+    new Howl({src: ['audio/plong/D4.mp3']}), 
+    new Howl({src: ['audio/plong/E4.mp3']}), 
+    new Howl({src: ['audio/plong/F4.mp3']}), 
+    new Howl({src: ['audio/plong/G4.mp3']}), 
 
-    new Howl({src: ['../audio/plong/A4.mp3']}), 
-    new Howl({src: ['../audio/plong/B4.mp3']}), 
-    new Howl({src: ['../audio/plong/C5.mp3']}), 
-    new Howl({src: ['../audio/plong/D5.mp3']}), 
-    new Howl({src: ['../audio/plong/E5.mp3']}), 
+    new Howl({src: ['audio/plong/A4.mp3']}), 
+    new Howl({src: ['audio/plong/B4.mp3']}), 
+    new Howl({src: ['audio/plong/C5.mp3']}), 
+    new Howl({src: ['audio/plong/D5.mp3']}), 
+    new Howl({src: ['audio/plong/E5.mp3']}), 
 
-    new Howl({src: ['../audio/plong/F5.mp3']}), 
-    new Howl({src: ['../audio/plong/G5.mp3']}), 
-    new Howl({src: ['../audio/plong/A5.mp3']}), 
-    new Howl({src: ['../audio/plong/B5.mp3']}), 
-    new Howl({src: ['../audio/plong/C6.mp3']}),
+    new Howl({src: ['audio/plong/F5.mp3']}), 
+    new Howl({src: ['audio/plong/G5.mp3']}), 
+    new Howl({src: ['audio/plong/A5.mp3']}), 
+    new Howl({src: ['audio/plong/B5.mp3']}), 
+    new Howl({src: ['audio/plong/C6.mp3']}),
 ]
 
 const instruments = {
