@@ -10,6 +10,16 @@ octaves.forEach((octave) => {
 })
 source_harp.push(new Howl({src: ['../audio/harp/C6.ogg']}));
 
+// bass
+var source_bass_harp = [];
+octaves = [1, 2, 3];
+octaves.forEach((octave) => {
+    note_names.forEach((name) => {
+        source_bass_harp.push(new Howl({src: ['../audio/bass_harp/' + name + octave + '.ogg']}));
+    })
+})
+source_bass_harp.push(new Howl({src: ['../audio/bass_harp/C4.ogg']}));
+
 // plong
 var source_plong = []
 octaves = [4, 5, 6];
@@ -26,9 +36,10 @@ const instruments = {
         "id": "harp", 
         "source": source_harp
     },
-    // "bass harp": {
-    //     "id": "bass_harp"
-    // },
+    "bass harp": {
+        "id": "bass_harp", 
+        "source": source_bass_harp
+    },
     // "guitar": {
     //     "id": "guitar"
     // },
