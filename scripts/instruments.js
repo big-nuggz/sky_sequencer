@@ -1,27 +1,31 @@
-var plongs = [
-    new Howl({src: ['../audio/plong/C4.mp3']}), 
-    new Howl({src: ['../audio/plong/D4.mp3']}), 
-    new Howl({src: ['../audio/plong/E4.mp3']}), 
-    new Howl({src: ['../audio/plong/F4.mp3']}), 
-    new Howl({src: ['../audio/plong/G4.mp3']}), 
+const note_names = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
 
-    new Howl({src: ['../audio/plong/A4.mp3']}), 
-    new Howl({src: ['../audio/plong/B4.mp3']}), 
-    new Howl({src: ['../audio/plong/C5.mp3']}), 
-    new Howl({src: ['../audio/plong/D5.mp3']}), 
-    new Howl({src: ['../audio/plong/E5.mp3']}), 
+// harp
+var source_harp = [];
+var octaves = [3, 4, 5];
+octaves.forEach((octave) => {
+    note_names.forEach((name) => {
+        source_harp.push(new Howl({src: ['../audio/harp/' + name + octave + '.ogg']}));
+    })
+})
+source_harp.push(new Howl({src: ['../audio/harp/C6.ogg']}));
 
-    new Howl({src: ['../audio/plong/F5.mp3']}), 
-    new Howl({src: ['../audio/plong/G5.mp3']}), 
-    new Howl({src: ['../audio/plong/A5.mp3']}), 
-    new Howl({src: ['../audio/plong/B5.mp3']}), 
-    new Howl({src: ['../audio/plong/C6.mp3']}),
-]
+// plong
+var source_plong = []
+octaves = [4, 5, 6];
+octaves.forEach((octave) => {
+    note_names.forEach((name) => {
+        source_plong.push(new Howl({src: ['../audio/plong/' + name + octave + '.mp3']}));
+    })
+})
+source_plong.push(new Howl({src: ['../audio/plong/C7.mp3']}));
 
+// definitons
 const instruments = {
-    // "harp": {
-    //     "id": "harp"
-    // },
+    "harp": {
+        "id": "harp", 
+        "source": source_harp
+    },
     // "bass harp": {
     //     "id": "bass_harp"
     // },
@@ -96,6 +100,6 @@ const instruments = {
     // }, 
     "plong": {
         "id": "pling_plong", 
-        "source": plongs
+        "source": source_plong
     }
 }

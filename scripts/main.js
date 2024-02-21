@@ -1,6 +1,14 @@
 const track_list = document.getElementById("container_tracks");
 const track_add_button = document.getElementById("button_add_track");
 
+const major_scale = [
+    0, 2, 4, 5, 7, 9, 11, 
+    12, 14, 16, 17, 19, 21, 23, 
+    24
+];
+
+var key_offset = 0;
+
 track_list.addEventListener("dragover", track_list_drag_handler);
 track_list.addEventListener("dragenter", event => event.preventDefault());
 
@@ -133,7 +141,8 @@ function toggle_note_state(event) {
         var note_index = parseInt(event.target.classList[1].split('_')[1])
         var instrument = event.target.parentNode.parentNode.parentNode.parentNode.querySelectorAll(".selection_instrument")[0].value;
         if (instruments[instrument].source != undefined) {
-            instruments[instrument].source[note_index].play();
+            let source_note_index = major_scale[note_index] + key_offset;
+            instruments[instrument].source[source_note_index].play();
         }
     }
     

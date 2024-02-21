@@ -19,10 +19,24 @@
         <div id="container_controls">
             <button id="button_play_pause" class="control_buttons">play/pause</button>
             <button id="button_stop" class="control_buttons">stop</button>
+            key: <select id="select_key">
+                <option value="0">C</option>
+                <option value="1">C#/Db</option>
+                <option value="2">D</option>
+                <option value="3">D#/Eb</option>
+                <option value="4">E</option>
+                <option value="5">F</option>
+                <option value="6">F#/Gb</option>
+                <option value="7">G</option>
+                <option value="8">G#/Ab</option>
+                <option value="9">A</option>
+                <option value="10">A#/Bb</option>
+                <option value="11">B</option>
+            </select>
             <input id="input_bpm" value="120">bpm
+            volume:<input id="slider_volume" type="range" min="0" max="100" value="50">
             <button id="button_save" class="control_buttons" disabled="true">save json</button>
             <button id="button_load" class="control_buttons" disabled="true">load json</button>
-            volume:<input id="slider_volume" type="range" min="0" max="100" value="50">
         </div>
         <div id="container_tracks"></div>
         <button id="button_add_track">+</button>
