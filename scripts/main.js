@@ -38,15 +38,23 @@ function create_new_track() {
                 track.remove();
             });
 
-        var instrument_selector = document.createElement("select");
-        instrument_selector.classList.add("selection_instrument");
+            var instrument_selector = document.createElement("select");
+            instrument_selector.classList.add("selection_instrument");
 
-        Object.keys(instruments).forEach((key) => {
-            let instrument_option = document.createElement("option");
-            instrument_option.value = key;
-            instrument_option.innerText = key;
-            instrument_selector.appendChild(instrument_option);
-        });
+            Object.keys(instruments).forEach((key) => {
+                let instrument_option = document.createElement("option");
+                instrument_option.value = key;
+                instrument_option.innerText = key;
+                instrument_selector.appendChild(instrument_option);
+            });
+
+            var volume_slider = document.createElement("input");
+            volume_slider.classList.add("slider_track_volume");
+            volume_slider.type = "range";
+            volume_slider.min = "0";
+            volume_slider.max = "100";
+            volume_slider.value = "100";
+            volume_slider.addEventListener("input", adjust_track_volume);
 
         var notes = document.createElement("div");
         notes.classList.add("container_note_sequence");
@@ -60,12 +68,22 @@ function create_new_track() {
     
     track.appendChild(draggable_handle);
     track_controls.appendChild(instrument_selector);
+    track_controls.appendChild(volume_slider);
     track_controls.appendChild(track_delete_button);
     track.appendChild(track_controls);
     notes.appendChild(note_add_button);
     track.appendChild(notes);
 
     return track
+}
+
+function adjust_track_volume(event) {
+    var volume = event.target.value / 100.0;
+    var instrument = event.target.parentNode.querySelectorAll(".selection_instrument")[0].value;
+    instruments[instrument].source.forEach((sound) => {
+        sound.volume(volume);
+    });
+    // Howler.volume(volume);
 }
 
 function expand_note_container(event) {

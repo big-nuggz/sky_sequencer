@@ -98,6 +98,10 @@ button {
     width: 40px;
 }
 
+#slider_volume {
+
+}
+
 #container_tracks {
     display: flex;
     flex-direction: column;
@@ -146,6 +150,10 @@ button {
 
 .selection_instrument {
     height: 20px;
+}
+
+.slider_track_volume {
+    height: 16px;
 }
 
 .button_delete_track {

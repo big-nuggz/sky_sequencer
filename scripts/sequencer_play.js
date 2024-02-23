@@ -116,14 +116,14 @@ function play_html() {
 }
 
 // for future
-function parse_html() {
-    var sequence = {};
+// function parse_html() {
+//     var sequence = {};
 
-    var tracks = track_list.querySelectorAll(".track");
+//     var tracks = track_list.querySelectorAll(".track");
 
-    tracks.forEach(track => {
+//     tracks.forEach(track => {
 
-    })
+//     })
 
-    return sequence
-}
+//     return sequence
+// }
